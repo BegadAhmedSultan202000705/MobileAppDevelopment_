@@ -7,6 +7,8 @@ TagManager:
   - Ball
   - Projectile
   - Ground
+  - Monster
+  - Boundary
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - ddball
+  - Monster
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -52,4 +54,7 @@ TagManager:
     locked: 0
   - name: ddball
     uniqueID: 1902311289
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 1721986639
     locked: 0
