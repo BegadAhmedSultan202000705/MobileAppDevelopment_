@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -20,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-
         Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         rb.velocity = movement;
 
@@ -47,5 +44,20 @@ public class PlayerController : MonoBehaviour
     public void CollectBallBack()
     {
         ballThrown = false;
+    }
+
+    // This method is called when the player collides with another object
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with a boundary
+        if (collision.gameObject.tag == "Boundary")
+        {
+            // Perform any actions you want when the player hits a boundary
+            // For example, stop the player's movement
+            rb.velocity = Vector2.zero;
+
+            // You could also add any other logic here, such as reducing player health,
+            // changing the game state, or providing feedback to the player.
+        }
     }
 }
